@@ -18,21 +18,9 @@ export class MenuService {
 
         menu.Id = 1;
         menu.Category = "Pizza";
-        menu.Item = this.getPizzMenuItems(menu.Id);
-
+        menu.Item = Pizza;
+        
         return menu;
-    }
-
-    getPizzMenuItems(menuId: number): MenuItem[] {
-        let pizzaItems: MenuItem[] = [];
-
-        let index:  number = 0;
-        for(let pizzaItem of Pizza) {
-            pizzaItems.push(pizzaItem);
-            index++;
-        }
-
-        return pizzaItems;
     }
 
     getPastaMenu(): Menu {
