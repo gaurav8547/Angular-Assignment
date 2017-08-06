@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Menu</h3>
+        </div>
+        <div class="col-sm-12">
+            <article *ngFor="let subMenu of menu">
+                <h4>{{ subMenu?.Category }}</h4>
+                <table class="table-striped" width="100%">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Small</th>
+                            <th>Medium</th>
+                            <th>Large</th>
+                            <th>Family</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of subMenu?.Item">
+                            <td>
+                                <label>{{ item?.Name }}</label>
+                            </td>
+                            <td *ngFor="let size of item.SizePrice">
+                                {{ size?.Price | currency:'USD':true:'1.2-2' }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+        </div>
+    </div>
+        <hr />
+    <div class="col-sm-12 hr"></div>
+</div>
